@@ -1,7 +1,7 @@
-import org.example.Concurso;
-import org.example.Inscripcion;
-import org.example.Participante;
 import org.junit.Test;
+import punto1.Concurso;
+import punto1.Inscripcion;
+import punto1.Participante;
 
 import static org.junit.Assert.assertTrue;
 

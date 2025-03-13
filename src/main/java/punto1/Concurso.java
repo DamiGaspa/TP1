@@ -1,4 +1,4 @@
-package org.example;
+package punto1;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.example;
+package punto1;
 
 public class Inscripcion {
     private Concurso concurso;
