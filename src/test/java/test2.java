@@ -8,20 +8,26 @@ public class test2 {
         var mesa = new Mesa();
         var b1 = new Bebida(2500);
         var p1 = new PlatoPrincipal(15000);
-        mesa.getBebidas().add(b1);
-        mesa.getPlatos().add(p1);
-        int choose = 0;
-        switch (choose) {
-            case 1:
+        mesa.sumarBebida(b1);
+        mesa.sumarPlato(p1);
+        double precioTotal = 0;
+        String pago = "visa";
+        switch (pago) {
+            case "visa":
                 var visa = new Visa();
-                visa.aplicarDescuento(b1.getPrecio());
-            case 2:
+                precioTotal = visa.aplicarDescuento(mesa.calcularCostoBebidas()) + mesa.calcularCostoPlatos();
+                //System.out.println(visa.aplicarDescuento(mesa.calcularCostoBebidas()));
+                break;
+            case "mastercard":
                 var mastercard = new MasterCard();
-                mastercard.aplicarDescuento(p1.getPrecio());
-            case 3:
+                precioTotal = mastercard.aplicarDescuento(mesa.calcularCostoPlatos()) + mesa.calcularCostoBebidas();
+                break;
+            case "comarcaplus":
                 var comarcaplus = new ComarcaPlus();
-                comarcaplus.aplicarDescuento(mesa.calcularCostoTotal());
+                precioTotal = comarcaplus.aplicarDescuento(mesa.calcularCostoTotal());
+                break;
         }
+        System.out.println("Precio Total: " + precioTotal);
     }
 
 }

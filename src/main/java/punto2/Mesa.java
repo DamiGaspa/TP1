@@ -18,14 +18,14 @@ public class Mesa {
         platos = new ArrayList<>();
     }
 
-    public double calcularCostoBebidas(List<Bebida> bebidas) {
+    public double calcularCostoBebidas() {
         for (Bebida bebida : bebidas) {
             this.costoBebidas += bebida.getPrecio();
         }
         return costoBebidas;
     }
 
-    public double calcularCostoPlatos(List<PlatoPrincipal> platos) {
+    public double calcularCostoPlatos() {
         for (PlatoPrincipal plato : platos) {
             this.costoPlatos += plato.getPrecio();
         }
@@ -34,6 +34,14 @@ public class Mesa {
 
     public double calcularCostoTotal() {
         return costoTotal = costoBebidas + costoPlatos;
+    }
+
+    public void sumarBebida(Bebida bebida) {
+        bebidas.add(bebida);
+    }
+
+    public void sumarPlato(PlatoPrincipal plato) {
+        platos.add(plato);
     }
 
     public List<Bebida> getBebidas() {
