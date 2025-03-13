@@ -1,38 +1,40 @@
 package org.example;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Concurso {
-    private LocalDateTime fechaInicial;
-    private LocalDateTime fechaFinal;
+    private LocalDate fechaInicial;
+    private LocalDate fechaFinal;
     private int cantidadParticipantes;
+    private ArrayList<Participante> participantes;
 
-    public Concurso () {
-        this.fechaInicial = LocalDateTime.of(2025, 3, 1, 12, 0);
-        this.fechaFinal = LocalDateTime.of(2025, 3, 31, 12, 0);
+    public Concurso() {
+        this.participantes = new ArrayList<>();
+        this.fechaInicial = LocalDate.of(2025, 3, 1);
+        this.fechaFinal = LocalDate.of(2025, 3, 31);
+        this.cantidadParticipantes = 0;
     }
 
-    public LocalDateTime getFechaInicial() {
+    public LocalDate getFechaInicial() {
         return fechaInicial;
     }
 
-    public LocalDateTime getFechaFinal() {
+    public LocalDate getFechaFinal() {
         return fechaFinal;
     }
 
-    public void establecerInicio () {
-        this.fechaInicial = LocalDateTime.of(2025, 3, 1, 12, 0);
-    }
-
-    public void establecerFinal () {
-        this.fechaFinal = LocalDateTime.of(2025, 3, 31, 12, 0);
-    }
-
-    public int obtenerCantidadParticipantes () {
+    public int obtenerCantidadParticipantes() {
         return this.cantidadParticipantes;
     }
 
-    public void nuevoInscripto () {
+    public void inscribirParticipante(Participante p) {
+        this.participantes.add(p);
         this.cantidadParticipantes++;
+        p.seInscribio();
+    }
+
+    public boolean existeParticipante(Participante p) {
+        return this.participantes.contains(p);
     }
 }
