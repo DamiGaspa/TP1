@@ -36,6 +36,11 @@ public class Mesa {
         return costoTotal = costoBebidas + costoPlatos;
     }
 
+    public double darPropina(double precio, double porcentaje) {
+        double propina = 1 + (porcentaje / 100);
+        return precio * propina;
+    }
+
     public void sumarBebida(Bebida bebida) {
         bebidas.add(bebida);
     }

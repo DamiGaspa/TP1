@@ -27,6 +27,8 @@ public class test2 {
                 precioTotal = comarcaplus.aplicarDescuento(mesa.calcularCostoTotal());
                 break;
         }
+        double porcentaje = 2;
+        precioTotal = mesa.darPropina(precioTotal, porcentaje);
         System.out.println("Precio Total: " + precioTotal);
     }
 
