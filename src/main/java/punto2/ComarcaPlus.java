@@ -1,7 +1,7 @@
 package punto2;
 
 public class ComarcaPlus extends TarjetaCredito {
-    private double descuento = 0.02;
+    private double descuento;
 
     public ComarcaPlus() {
         this.descuento = 0.03;

@@ -33,7 +33,7 @@ public class Mesa {
     }
 
     public double calcularCostoTotal() {
-        return costoTotal = costoBebidas + costoPlatos;
+        return costoTotal = calcularCostoBebidas() + calcularCostoPlatos();
     }
 
     public double darPropina(double precio, double porcentaje) {

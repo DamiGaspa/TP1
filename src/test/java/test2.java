@@ -11,12 +11,13 @@ public class test2 {
         mesa.sumarBebida(b1);
         mesa.sumarPlato(p1);
         double precioTotal = 0;
-        String pago = "visa";
+        double porcentaje = 2;
+        String pago = "comarcaplus";
+
         switch (pago) {
             case "visa":
                 var visa = new Visa();
                 precioTotal = visa.aplicarDescuento(mesa.calcularCostoBebidas()) + mesa.calcularCostoPlatos();
-                //System.out.println(visa.aplicarDescuento(mesa.calcularCostoBebidas()));
                 break;
             case "mastercard":
                 var mastercard = new MasterCard();
@@ -27,9 +28,11 @@ public class test2 {
                 precioTotal = comarcaplus.aplicarDescuento(mesa.calcularCostoTotal());
                 break;
         }
-        double porcentaje = 2;
+        System.out.println("Al aplicar el descuento por pago con tarjeta " + pago.toUpperCase() + ", el costo total será: $" + precioTotal);
         precioTotal = mesa.darPropina(precioTotal, porcentaje);
-        System.out.println("Precio Total: " + precioTotal);
+        System.out.println("Al dejar una propia del " + porcentaje + "%, el costo final será: $" + precioTotal);
+
+
     }
 
 }
