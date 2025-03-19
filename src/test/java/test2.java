@@ -1,5 +1,10 @@
 import org.junit.Test;
-import punto2.*;
+import punto2.Bebida;
+import punto2.Mesa;
+import punto2.PlatoPrincipal;
+import punto2.Visa;
+
+import static org.junit.Assert.assertTrue;
 
 public class test2 {
 
@@ -7,32 +12,25 @@ public class test2 {
     public void test3() {
         var mesa = new Mesa();
         var b1 = new Bebida(2500);
+        var b2 = new Bebida(3000);
         var p1 = new PlatoPrincipal(15000);
+        var p2 = new PlatoPrincipal(18000);
+        var tarjeta = new Visa();
+        //var tarjeta = new MasterCard();
+        //var tarjeta = new ComarcaPlus();
         mesa.sumarBebida(b1);
+        mesa.sumarBebida(b2);
         mesa.sumarPlato(p1);
-        double precioTotal = 0;
-        double porcentaje = 2;
-        String pago = "comarcaplus";
+        mesa.sumarPlato(p2);
+        double propina = 2;
 
-        switch (pago) {
-            case "visa":
-                var visa = new Visa();
-                precioTotal = visa.aplicarDescuento(mesa.calcularCostoBebidas()) + mesa.calcularCostoPlatos();
-                break;
-            case "mastercard":
-                var mastercard = new MasterCard();
-                precioTotal = mastercard.aplicarDescuento(mesa.calcularCostoPlatos()) + mesa.calcularCostoBebidas();
-                break;
-            case "comarcaplus":
-                var comarcaplus = new ComarcaPlus();
-                precioTotal = comarcaplus.aplicarDescuento(mesa.calcularCostoTotal());
-                break;
-        }
-        System.out.println("Al aplicar el descuento por pago con tarjeta " + pago.toUpperCase() + ", el costo total será: $" + precioTotal);
-        precioTotal = mesa.darPropina(precioTotal, porcentaje);
-        System.out.println("Al dejar una propia del " + porcentaje + "%, el costo final será: $" + precioTotal);
+        double precioTotal = tarjeta.aplicarDescuento(mesa.calcularCostoBebidas(), mesa.calcularCostoPlatos());
+        System.out.println("Precio total: " + precioTotal);
+        double precioMasPropina = mesa.darPropina(precioTotal, propina);
+        System.out.println("Precio total con propina: " + precioMasPropina);
 
-
+        assertTrue(precioTotal < 38500);
+        assertTrue(precioMasPropina > precioTotal);
     }
 
 }

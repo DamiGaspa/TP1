@@ -7,7 +7,8 @@ public class Visa extends TarjetaCredito {
         this.descuento = 0.03;
     }
 
-    public double aplicarDescuento(double precio) {
-        return (precio - (precio * this.descuento));
+    public double aplicarDescuento(double bebidas, double platos) {
+        double total = platos + (bebidas - (bebidas * this.descuento));
+        return total;
     }
 }
