@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f94fcfeb-00c5-4bbd-98b0-a253bd739f59" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/punto2/ComarcaPlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/punto2/ComarcaPlus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/punto2/MasterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/punto2/MasterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/punto2/TarjetaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/punto2/TarjetaCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/punto2/Visa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/punto2/Visa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +149,7 @@
       <workItem from="1741878837968" duration="2466000" />
       <workItem from="1741883837124" duration="1200000" />
       <workItem from="1741885089298" duration="1794000" />
-      <workItem from="1742421696311" duration="1920000" />
+      <workItem from="1742421696311" duration="2507000" />
     </task>
     <servers />
   </component>
