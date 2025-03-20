@@ -7,8 +7,8 @@ public class Mesa {
     private double costoTotal;
     private double costoBebidas;
     private double costoPlatos;
-    private List<Bebida> bebidas;
-    private List<PlatoPrincipal> platos;
+    private List<ItemMenu> bebidas;
+    private List<ItemMenu> platos;
 
     public Mesa() {
         this.costoPlatos = 0;
@@ -19,15 +19,15 @@ public class Mesa {
     }
 
     public double calcularCostoBebidas() {
-        for (Bebida bebida : bebidas) {
-            this.costoBebidas += bebida.getPrecio();
+        for (ItemMenu bebida : bebidas) {
+            this.costoBebidas += bebida.obtenerPrecio();
         }
         return costoBebidas;
     }
 
     public double calcularCostoPlatos() {
-        for (PlatoPrincipal plato : platos) {
-            this.costoPlatos += plato.getPrecio();
+        for (ItemMenu plato : platos) {
+            this.costoPlatos += plato.obtenerPrecio();
         }
         return costoPlatos;
     }
@@ -41,19 +41,19 @@ public class Mesa {
         return precio * propina;
     }
 
-    public void sumarBebida(Bebida bebida) {
+    public void sumarBebida(ItemMenu bebida) {
         bebidas.add(bebida);
     }
 
-    public void sumarPlato(PlatoPrincipal plato) {
+    public void sumarPlato(ItemMenu plato) {
         platos.add(plato);
     }
 
-    public List<Bebida> getBebidas() {
+    public List<ItemMenu> getBebidas() {
         return bebidas;
     }
 
-    public List<PlatoPrincipal> getPlatos() {
+    public List<ItemMenu> getPlatos() {
         return platos;
     }
 }
